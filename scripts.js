@@ -1,7 +1,7 @@
 /*
     Resumo:
         primeiro pego pelo ID o meu botão e o select do .html
-        crio um eventlistener (final do código) para que toda vez que integarir com o botão e com o select,
+        crio um eventlistener (final do código) para que toda vez que interagir com o botão e com o select,
         chame uma função, seja das conversões ou da mudança do texto e imagens
  */
 
@@ -13,6 +13,7 @@ const select = document.getElementById("currency-select")
 
 const dolar = 5.2
 const euro = 5.9
+const bitcoin = 0.0000068
 
 //aqui criei a função que fará as conversões
 const convertValues = () => {
@@ -36,12 +37,14 @@ const convertValues = () => {
     }).format(inputReais / dolar)
   }
 
-  if (select.value === "€ Euro") {
+  else if (select.value === "€ Euro") {
     currencyValueText.innerHTML = new Intl.NumberFormat("de-DE", {
       style: "currency",
       currency: "EUR",
     }).format(inputReais / euro)
   }
+
+  else { currencyValueText.innerHTML = (inputReais * bitcoin) }
   //pego a variavel currencyValueText que é a minha currency-value-text do .html
 }
 
@@ -57,6 +60,11 @@ changeCurrency = () => {
   if (select.value === "€ Euro") {
     currencyName.innerHTML = "Euro"
     currencyImg.src = "./assets/euro.png"
+  }
+
+  if (select.value === "Bitcoin") {
+    currencyName.innerHTML = "Bitcoin"
+    currencyImg.src = "./assets/bitcoin.png"
   }
 
   convertValues() //aqui eu chamo a função que converte os valores
