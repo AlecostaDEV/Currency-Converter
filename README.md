@@ -1,7 +1,7 @@
 <p align=center > <img src="https://em-content.zobj.net/thumbs/120/htc/37/currency-exchange_1f4b1.png"  width="50"> </p>
 
 <h1>Currency Converter</h1>
-<h3>Projeto explicado</h3>
+<h3>Especificação</h3>
 <p>  O <b>Currency converter</b> permite que o usuário converta a quantia desejada do Real brasileiro para Dólar americano, Euro ou Bitcoin</p>
 
 ##
