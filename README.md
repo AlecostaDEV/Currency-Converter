@@ -2,7 +2,7 @@
 
 <h1>Currency Converter</h1>
 <h3>Especificação</h3>
-<p>  O <b>Currency converter</b> permite que o usuário converta a quantia desejada do Real brasileiro para Dólar americano, Euro ou Bitcoin</p>
+<p> - O <b>Currency converter</b> permite que o usuário converta a quantia desejada do Real brasileiro para Dólar americano, Euro ou Bitcoin</p>
 
 ##
 
