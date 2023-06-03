@@ -11,18 +11,21 @@ const button = document.getElementById("convert-button")
 //pelo ID dele, criei uma variável (const button) para ser adicionado um evento..
 const select = document.getElementById("currency-select")
 
-const dolar = 5.2
-const euro = 5.9
-const bitcoin = 0.0000068
-
 //aqui criei a função que fará as conversões
-const convertValues = () => {
+const convertValues = async () => {
   const inputReais = document.getElementById("input-real").value //pega o valor que será digitado no meu input
   const realValueText = document.getElementById("real-value-text")
   const currencyValueText = document.getElementById("currency-value-text")
 
   //realValueText.innerHTML = inputReais //- aqui foi feito sem a formatação para currency -//
   //currencyValueText.innerHTML = (inputReais / dolar) //- aqui foi feito sem a formatação para currency -//
+
+  const data = await fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL").then( response => response.json())
+  //aqui importo uma API que mantem as cotações das moedas atualizadas
+
+  const dolar = data.USDBRL.high
+  const euro = data.EURBRL.high
+  const bitcoin = data.BTCBRL.high
 
   //aqui uso a biblioteca de formatação para currency
   realValueText.innerHTML = new Intl.NumberFormat("pt-BR", {
@@ -44,7 +47,7 @@ const convertValues = () => {
     }).format(inputReais / euro)
   }
 
-  else { currencyValueText.innerHTML = (inputReais * bitcoin) }
+  else { currencyValueText.innerHTML = (inputReais / bitcoin).toFixed(5) }
   //pego a variavel currencyValueText que é a minha currency-value-text do .html
 }
 
@@ -76,5 +79,5 @@ button.addEventListener("click", convertValues)
 //quando esccuto o evento click, chamo a função convertValues, criada acima
 
 select.addEventListener("change", changeCurrency)
-//quando esccuto o evento change, chamo a função changeCurrency, criada acima
+//quando escuto o evento change, chamo a função changeCurrency, criada acima
 //o evento change, é quando mudo entre as opções do meu select
