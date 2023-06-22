@@ -9,26 +9,38 @@
 
 body {
     background-color: #E5E5E5;
+    /*poderia ser: 
+    display: flex 
+    justify-content: center > centraliza eixo principal
+    align-itens: center > centraliza eixo secundário
+    height: 100vh > projeto toma tela inteira verticalmente
+    */
 }
 
 .container {
     width: 375px;
     background-color: #F4F4F4;
-    margin: 100px auto 0;
-    margin-top: 100px;
+    margin: 100px auto 0; /*poderia ser excluído, caso fosse feito pelo display flex no body ou div pai */
+    margin-top: 100px; /*poderia ser excluído ....  */
     
 }
 
 header {
     background-color: #1B83E2;
     height: 66px;
+    /*poderia ser: 
+    display: flex 
+    justify-content: center > centraliza eixo principal
+    align-itens: center > centraliza eixo secundário
+    */
 }
 
-h1 {    
+h1 {    /*Para centralizar esse h1, poderia usar o display flex no header acima*/
     font-size: 24px;
     color: #F4F4F4;
     text-align: center;
     padding-top: 25px; /*foi usado padding no lugar de margin, pq precisava mexer na área interna*/
+    /*No lugar de text-align e padding-top poderia ser:  */
 }
 
 main {
@@ -94,11 +106,24 @@ button:active {
 section {
     border: 1px solid #1B83E2;
     border-radius: 4px;
+    /*
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 15px
+    */
 }
 
 .currency-container {
     text-align: center; /*como vou trabalhar com textos, já coloco text align center pra centralizar todos os textos*/
     padding: 10px; /*dou esse padding pra evitar que fique todo mundo grudado*/
+    /*no lugar de text-align e padding 
+    poderia ser:
+    display: flex
+    flex-direction: column
+    align-items: center 
+    gap: 2px
+    */
 }
 
 .currency-name {
@@ -112,7 +137,7 @@ section {
     font-size: 20px;
 }
 
-.arrow-img {
+.arrow-img { /*poderia ser deletado se for usado flexbox no container */
     margin: 15px auto;
     display: block; /*com o display block, centralizo a seta*/
 }
